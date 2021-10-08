@@ -1,14 +1,23 @@
 # oci_cli
 ## Description
 oci_cli is a dockerfile to create cli environment for Oracle Cloud Infrastructure on Docker.
-
-## Version
-- Python: 3.10.0 (https://github.com/docker-library/python/blob/8d48af512dc58e9c29c9d4ee59477c195a29cbdc/3.10/bullseye/Dockerfile)
-- Debian: bullseye
-- oci-cli: 3.1.1
+Docker images are available [here](https://hub.docker.com/r/nnaka2992/oci_cli)
 
 ## Usage
 ```
+# pull docker image
 docker pull nnaka2992/oci_cli:latest
-docker run --rm nnaka2992/oci_cli:latest -v
+
+# download docker run shell script
+mkdir -p oci_cli
+curl -O https://raw.githubusercontent.com/nnaka2992/oci_cli/main/oci.sh
+
+# set alias to shell script
+alias oci=`pwd`/oci.sh
+
+# define directory to store oci config
+OCI_CONFIG_DIR=`pwd`/oci
+
+# use oci cli
+oci session authenticate
 ```
