@@ -7,7 +7,7 @@ if not defined OCI_CONFIG_DIR (
     echo Use !OCI_CONFIG_DIR! instead.
     echo;
 )
-if not exist %OCI_CONFIG_DIR%\nul mkdir %OCI_CONFIG_DIR%
+mkdir %OCI_CONFIG_DIR% 2>nul
 
 docker run -it ^
        -v %OCI_CONFIG_DIR%:/root/.oci ^
