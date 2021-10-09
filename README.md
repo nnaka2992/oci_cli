@@ -31,7 +31,7 @@ oci session authenticate
 docker pull nnaka2992/oci_cli:latest
 
 # download docker run bat file
-if not exist oci_cli mkdir oci_cli
+mkdir oci_cli 2>nul
 cd oci_cli
 curl -O https://raw.githubusercontent.com/nnaka2992/oci_cli/main/oci.bat
 
